@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+    color: #0d1d25;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    border: 2px solid #104c64;
+    padding-top: 15px ;
+    margin-top: 50px;
+}
+body{
+    background-color:#f9ebc7 ;
+}
+div{
+    text-align: left;
+    color:#0d1d25;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large  ;
+}
+a{
+    text-align: left;
+    color: #c4661f;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: larger;
+}
+.foto {
+    display: flex;
+    justify-content: center;
+}
