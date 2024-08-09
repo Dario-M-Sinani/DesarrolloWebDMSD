@@ -1,0 +1,49 @@
+
+.contenedor{
+    margin: auto;
+    width: 900px;
+    border: 1px solid black;
+    
+}
+header{
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+}
+nav{
+    padding: 15px;
+    width: 200px;
+    border: 1px solid black;
+    display: inline-block;
+}
+section{
+    width: 600px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.foto {
+    display: flex;
+    justify-content: center;
+}   
+
+ul.vertical{
+    border: 1px solid black;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 120px;
+    padding: 10px 10px 30px 10px ;
+}
+ul.vertical li {
+    margin-top: 10px;
+    height: 20px;
+}
+ul.vertical li a:link,
+ul.vertical li a:visited{
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid;
+
+}

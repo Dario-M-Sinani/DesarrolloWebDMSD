@@ -1,0 +1,29 @@
+
+.contenedor{
+margin:0 auto;
+width: 90%;
+height: 600px;
+border: 3px solid blue;
+}
+
+.caja{
+    background-color: aqua;
+    left: 25%;
+    top: 10px;
+    text-align: center;
+    border: 1px solid red;
+    width: 400px;
+    position: relative;
+    z-index: 5;
+}
+
+.caja2{
+    background-color: rgb(255, 123, 0);
+    left: 25%;
+    top: 10px;
+    text-align: center;
+    border: 1px solid red;
+    width: 400px;
+    position: relative;
+    z-index: 10;
+}
