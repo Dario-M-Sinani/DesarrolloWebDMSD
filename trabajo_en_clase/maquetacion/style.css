@@ -1,0 +1,81 @@
+
+.container{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: auto;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    & .logos{
+        display: flex;
+        width: 100%;
+        border: 1px solid black;
+        justify-content: space-around;
+        align-items: center;
+        background-color:#95B3D7 ;
+    }
+    & .uni{
+        text-align: center;
+        & h1{
+            color: red;
+            font-size: large;
+        }
+        & h2{
+            font-size: medium;
+        }
+    }
+    & .carreras{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        height: 30px;
+        & .sis{
+            width: 50%;
+            background-color:#FFC000 ;
+        }
+        & .cc{
+            width: 50%;
+            background-color: #0070C0;
+        }
+    }
+}
+
+nav{
+    display: flex;
+    background-color: #404040;
+    gap: 10px;    
+    padding: 0 100px;
+    justify-content: end;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    & .preguntas{
+        width: 100px;
+        border: 1px solid black;
+        background-color: #C60000;
+        height: 28px;
+        color: white;
+    }
+}
+main{
+    display: flex;
+    background-color: grey;
+    height: 200px;
+    & .presentacion{
+        padding: 20px;
+        width: 70%;
+        background-color: #404040;
+        margin: auto;
+        height: 120px;
+        color: #FFC000;
+    }
+
+}
+footer{
+    background-color: #C0504D;
+    text-align: center;
+}
