@@ -1,4 +1,6 @@
-
+*{
+  margin: 0;
+}
 
 .container {
     display: flex;
@@ -36,7 +38,7 @@
         justify-content: space-around;
         background-color: #fff;
         color: black;
-        min-height: 410px;
+        min-height: 450px;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         & li{

@@ -4,6 +4,10 @@ html, body {
 	padding: 0;
     font-family: 'Verdana', Times, serif;
 }
+.contenedorg{
+    width: 70%;
+    margin: auto;
+}
 .cabecera {
     margin-top: 0;
     padding-top: 0;
