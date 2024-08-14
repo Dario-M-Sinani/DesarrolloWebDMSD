@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 1300px;
+}
+header {
+  & .desplegables {
+    display: flex;
+    width: 100%;
+    color: white;
+    height: 30px;
+    font-size: medium;
+    justify-content: space-between;
+    & .menus {
+      display: flex;
+      background-color: black;
+      width: 90%;
+      gap: 50px;
+      align-items: center;
+      & select {
+        height: 20px;
+        color: white;
+        font-size: medium;
+        background-color: black;
+        padding: 0 10px;
+        width: 200px;
+      }
+    }
+    & .redes {
+      background-color: black;
+      width: 10%;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: end;
+    }
+  }
+  & .desplegables2 {
+    display: flex;
+    width: 100%;
+    color: white;
+    height: 50px;
+    font-size: large;
+    & .menus {
+      display: flex;
+      padding: 0 10px;
+      background-color: #2a492d;
+      align-items: center;
+      width: 90%;
+      gap: 20px;
+      & select {
+        height: 20px;
+        font-size: medium;
+        color: white;
+        background-color: #2a492d;
+        padding: 0 10px;
+        width: 150px;
+      }
+    }
+    & .escribe {
+      display: flex;
+      align-items: center;
+      background-color: #2a492d;
+      width: 18%;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      & input {
+        width: 60%;
+        height: 1px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 5px 0 0 5px;
+      }
+      & button {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        height: 20px;
+        background-color: #ccc; /* Color de fondo del botón */
+        border: none;
+        border-radius: 0 5px 5px 0; /* Esquinas redondeadas (derecha) */
+        cursor: pointer;
+      }
+      & button:hover {
+        background-color: #bbb; /* Color al pasar el mouse */
+      }
+      
+    }
+  }
+  .image-slider {
+    width: 98%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    background-color: #fff;
+  }
+
+  .image-container img {
+    height: 320px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .image-container img:last-child {
+    margin-right: 0;
+  }
+}
+.subcontenedor {
+  display: flex;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+
+  & .alaire {
+    & img {
+      height: 90px;
+    }
+  }
+  & .potcast {
+    & img {
+      height: 300px;
+    }
+  }
+  & .botones {
+    & img {
+      height: 80px;
+    }
+  }
+  & .comite {
+    & img {
+      height: 90px;
+    }
+  }
+  & .cartulina {
+    & img {
+      height: 300px;
+    }
+  }
+  & .Guia {
+    & img {
+      height: 200px;
+    }
+  }
+}
+main {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  & .noticonte{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 750px; 
+    background-color: white;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 15px;
+    & .imagen{
+        width: 100%;
+    }
+    & .notit{
+        font-size: 18px;
+    font-weight: bold;
+    color: #2b4a2a; /* Color del título */
+    margin: 15px;
+    }
+    & .descripcion{
+        font-size: 14px;
+    color: #333; /* Color del texto */
+    margin: 0 15px 15px 15px;
+    }
+    & .link{
+        display: block;
+    text-align: right;
+    font-size: 14px;
+    color: #006400; /* Color del enlace */
+    text-decoration: none;
+    margin: 0 15px 15px 15px;
+    }
+  }
+  
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  & .contpeque {
+    display: flex;
+    text-align: center;
+    font-size: smaller;
+    & img {
+      height: 250px;
+    }
+  }
+}
