@@ -1,0 +1,9 @@
+1.-  Genera un arreglo de números del 1 al 20. Luego, utiliza un ciclo foreach para separar los números en dos arreglos diferentes: 
+uno para los números pares y otro para los números impares. Imprime ambos arreglos al final.
+
+2.-  Realizar un programa en php que permita ordenar mediante el método burbuja de un arreglo definido como 
+$arreglo=[2,3,45,32,2,1,63,21,52,242,22,1]
+
+3.-  Encontrar el mayor y el menor de 5 números, imprimir los resultados en dos cuadros con bordes de color rojo
+
+4.- generar una tabla de ajedrez utilizando php donde los cuadros es de color negro
