@@ -1,0 +1,14 @@
+
+<form action="mayorv2.php" method="post">
+<?php
+$n = $_POST["n"];
+for ($i=0;$i<$n;$i++)
+{
+?>
+<label for="text">Introduce el numero:</label>
+<input type="number" name="valor[]" > <br>
+
+<?php
+}
+?>
+</form>

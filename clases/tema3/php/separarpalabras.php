@@ -12,3 +12,9 @@ $oracion="esta es una oracion"
     }
     ?>
 </ul>
+<?php
+foreach ($palabra as $p){
+    
+
+}
+$invertido = str
