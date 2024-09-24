@@ -1,6 +1,10 @@
-<?php
+<?php session_start();
+
 include 'conexion.php';
+include ("acceso.php");
+include ("permiso.php");
 $id=$_GET['id'];
+
 $sql="DELETE FROM padron WHERE id=$id";
 $resultado=$con->query($sql);
 
