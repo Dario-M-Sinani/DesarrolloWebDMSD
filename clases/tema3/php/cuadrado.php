@@ -16,7 +16,7 @@ $logitud = strlen($cadena);
 <div class="centrar">
 <?php
 echo strtoupper($cadena)."<br>" ;
-
+ 
 for($i=1;$i<$logitud-1;$i++){
     echo substr(strtoupper($cadena), $i,1);
     for($j=1;$j<$logitud+1;$j++){

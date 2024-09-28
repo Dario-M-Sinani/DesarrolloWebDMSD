@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .centrado{
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & input {
+            display: flex;
+            text-align: center;
+            border-radius: 20px;
+        }
+    }    
+    </style>
+</head>
+<body>
+    <div class="centrado">
+    <form action="dibujar.php" method="post">
+        <label for="cadena1">Cadena 1</label>
+        <input type="text" name="cadena1"><br>
+        <label for="cadena2">Cadena 2</label>
+        <input type="text" name="cadena2"><br>
+        <input type="submit" value="enviar"><br>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Tablero</title>
+</head>
+<body>
+    <h1>Generar Tablero</h1>
+    <form action="tablero.php" method="POST">
+        <label for="numerofilas">Número de filas:</label>
+        <input type="number"  name="numerofilas"><br><br>
+
+        <label for="numerocolumnas">Número de columnas:</label>
+        <input type="number"  name="numerocolumnas" required><br><br>
+
+        <label for="fila">Fila donde aparece Bowser:</label>
+        <input type="number"  name="fila"><br><br>
+
+        <label for="columna">Columna donde aparece Bowser:</label>
+        <input type="number"  name="columna" ><br><br>
+
+        <label for="color">Color de fondo de las casillas</label>
+        <input type="color" name="color" ><br><br>
+
+        <button type="submit">Generar Tablero</button>
+    </form>
+</body>
+</html>
