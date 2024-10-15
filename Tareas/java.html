@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios en JavaScript</title>
+    <script>
+        function calcularMayor() {
+            let num1 = int(prompt("Introduce el primer número:"));
+            let num2 = int(prompt("Introduce el segundo número:"));
+            let num3 = int(prompt("Introduce el tercer número:"));
+            let num4 = int(prompt("Introduce el cuarto número:"));
+            let mayor = Math.max(num1, num2, num3, num4);
+            alert("El mayor de los 4 números es: " + mayor);
+        }
+
+        function verificarParOImpar() {
+            let numero = parseInt(prompt("Introduce un número entero:"));
+            if (numero % 2 === 0) {
+                alert("El número " + numero + " es par.");
+            } else {
+                alert("El número " + numero + " es impar.");
+            }
+        }
+
+        function verificarPalindromo() {
+            let cadena = prompt("Introduce una cadena de texto:");
+            let textoLimpio = cadena.toLowerCase().replace(/[^a-z]/g, '');
+            let textoReverso = textoLimpio.split('').reverse().join('');
+            
+            if (textoLimpio === textoReverso) {
+                alert("La cadena es un palíndromo.");
+            } else {
+                alert("La cadena NO es un palíndromo.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicios en JavaScript</h1>
+    <p>Selecciona el ejercicio que deseas probar:</p>
+
+    <button onclick="calcularMayor()">Calcular el mayor de 4 números</button>
+    <br><br>
+    
+    <button onclick="verificarParOImpar()">Verificar si un número es par o impar</button>
+    <br><br>
+
+    <button onclick="verificarPalindromo()">Verificar si una cadena es un palíndromo</button>
+</body>
+</html>

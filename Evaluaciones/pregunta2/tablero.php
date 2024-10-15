@@ -1,8 +1,7 @@
 <?php  
-// Obtener los datos del formulario
 $numerofilas = $_POST['numerofilas']; 
 $numerocolumnas = $_POST['numerocolumnas'];
-$fila_bowser = $_POST['fila'] - 1;  // Restamos 1 porque los índices empiezan en 0
+$fila_bowser = $_POST['fila'] - 1;  
 $columna_bowser = $_POST['columna'] - 1;  // Restamos 1 porque los índices empiezan en 0
 $color = $_POST['color'];
 ?>
