@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="registrar.php" method="post" id="formulario">
+        <label for="nombres">nombre</label><br>
+        <input type="text" name="nombres" id="nombres"> <span id="Errornombre" style="color:red;display :none;"></span><br>
+        <label for="direccion">direccion</label><br>
+        <input type="text" name="direccion" id="direccion"><span id="Errordireccion" style="color:red;display :none;"></span><br>
+        
+        <input type="submit" value="enviar" onclick="validarForm()">
+    </form>
+    <script>
+
+        function validarForm(){
+        var formulario = document.getElementById("formulario");
+
+        if(formulario.nombres.value.length==0) 
+        { 
+        //comprueba que no esté vacío
+        
+        formulario.nombres.focus();
+        document.getElementById("Errornombre").style.display="inline"
+        }
+        if(formulario.direccion.value.length==0) 
+        { 
+        //comprueba que no estévacío
+        
+        formulario.direccion.focus();
+        document.getElementById("Errordireccion").style.display="inline"
+       
+        }
+        formulario.submit();
+        return true;
+    }
+    </script>
+</body>
+</html>
