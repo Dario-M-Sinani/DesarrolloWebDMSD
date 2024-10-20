@@ -1,31 +1,49 @@
-<?php session_start();
+<?php 
 include 'conexion.php';
-include ("acceso.php");
-include ("permiso.php");
 
-$nombre=$_FILES['fotografia']['name'];  //obtenemos el nombre del archivo
-$temp=$_FILES['fotografia']['tmp_name']; //obtenemos la ruta del archivo en el servidor
-$arreglo=explode(".", $nombre);
-$extension=$arreglo[1];// obtengo la extension del archivo
-$nuevonobre=uniqid().".".$extension;//Le doy un nuevo nombre de archivo
-copy ($temp,"images/".$nuevonobre);//copio el archivo a la carpeta de imagenes
 
-$nombres=$_POST['nombres'];
-$apellidos=$_POST['apellidos'];
-$carnet=$_POST['carnet'];
-$sexo=$_POST['sexo'];
-$fecha_nacimiento=$_POST['fecha_nacimiento'];
-$direccion=$_POST['direccion'];
-$mesa_id=$_POST['mesa_id'];
-$sql="INSERT INTO padron (nombres,apellidos,carnet,sexo,fecha_nacimiento,direccion,mesa_id,fotografia) VALUES ('$nombres','$apellidos','$carnet','$sexo','$fecha_nacimiento','$direccion',$mesa_id,$nuevonobre)";
-$resultado=$con->query($sql);
-if($resultado){?>
-<h1>Datos insertados correctamente</h1>
-<meta http-equiv="refresh" content="3; url=read.php">
-<?php
-}else{
-    echo "Error al insertar los datos";
+$carpetaDestino = "images/";
+
+// Procesar la subida de fotos y realizar inserciones
+for ($i = 0; $i < 4; $i++) { // Cambiar a 4 para insertar 4 registros
+    // Asegurarse de que el campo de fotografía existe
+    if (isset($_FILES['fotografia']['name'][$i]) && $_FILES['fotografia']['name'][$i] != "") {
+        // Obtener el nombre y la ruta temporal del archivo
+        $nombreFoto = $_FILES['fotografia']['name'][$i];  
+        $tempFoto = $_FILES['fotografia']['tmp_name'][$i]; 
+
+        // Obtener la extensión del archivo y crear un nuevo nombre
+        $extension = pathinfo($nombreFoto, PATHINFO_EXTENSION);
+        $nuevoNombre = uniqid() . "." . $extension;
+
+        // Mover el archivo a la carpeta de destino
+        move_uploaded_file($tempFoto, $carpetaDestino . $nuevoNombre);
+    } else {
+        $nuevoNombre = null; // Asignar null si no se subió una foto
+    }
+
+    // Obtener los datos del formulario
+    $nombres = isset($_POST['nombres'][$i]) ? $_POST['nombres'][$i] : '';
+    $apellidos = isset($_POST['apellidos'][$i]) ? $_POST['apellidos'][$i] : '';
+    $carnet = isset($_POST['carnet'][$i]) ? $_POST['carnet'][$i] : '';
+    $sexo = isset($_POST['sexo'][$i]) ? $_POST['sexo'][$i] : '';
+    $fecha_nacimiento = isset($_POST['fecha_nacimiento'][$i]) ? $_POST['fecha_nacimiento'][$i] : '';
+    $direccion = isset($_POST['direccion'][$i]) ? $_POST['direccion'][$i] : '';
+    $mesa_id = isset($_POST['mesa_id'][$i]) ? $_POST['mesa_id'][$i] : 0; // Asignar 0 si no se proporciona
+
+    // Consulta SQL para insertar en la base de datos
+    $sql = "INSERT INTO padron (nombres, apellidos, carnet, sexo, fecha_nacimiento, direccion, mesa_id, fotografia) 
+            VALUES ('$nombres', '$apellidos', '$carnet', '$sexo', '$fecha_nacimiento', '$direccion', '$mesa_id', '$nuevoNombre')";
+
+    $resultado = $con->query($sql);
+
+    if (!$resultado) {
+        echo "Error al insertar los datos para $nombres $apellidos: " . $con->error . "<br>";
+    }
 }
+
+$con->close();
 ?>
 
-
+<h1>Datos insertados correctamente</h1>
+<meta http-equiv="refresh" content="3; url=read.php">
