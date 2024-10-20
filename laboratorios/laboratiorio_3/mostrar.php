@@ -31,7 +31,6 @@ if (isset($_GET['ordenar'])) {
 }
 $resultado = $con->query($sql);
 
-// Consulta para obtener el nombre de las carreras
 $sqlCarreras = "SELECT codigo, carrera FROM carreras";
 $resultadoCarreras = $con->query($sqlCarreras);
 $carreras = [];
@@ -49,11 +48,11 @@ while ($fila = $resultadoCarreras->fetch_assoc()) {
         <tr>
             <th>Nro</th> 
             <th>Fotografía</th> 
-            <th><a class='blanco' href="read.php?ordenar=nombres">Nombres</a></th>
-            <th><a class='blanco' href="read.php?ordenar=apellidos">Apellidos</a></th>
-            <th><a class='blanco' href="read.php?ordenar=cu">CU</a></th>
-            <th><a class='blanco' href="read.php?ordenar=sexo">Sexo</a></th>
-            <th><a class='blanco' href="read.php?ordenar=codigocarrera">Carrera</a></th>
+            <th><a class='blanco' href="mostrar.php?ordenar=nombres">Nombres</a></th>
+            <th><a class='blanco' href="mostrar.php?ordenar=apellidos">Apellidos</a></th>
+            <th><a class='blanco' href="mostrar.php?ordenar=cu">CU</a></th>
+            <th><a class='blanco' href="mostrar.php?ordenar=sexo">Sexo</a></th>
+            <th><a class='blanco' href="mostrar.php?ordenar=codigocarrera">Carrera</a></th>
         </tr>
         <?php
         $i = 0; 

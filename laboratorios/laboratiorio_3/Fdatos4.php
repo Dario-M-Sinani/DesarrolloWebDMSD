@@ -5,37 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    .formulario {
-        width: 300px; /* Ajusta según tu preferencia */
-        margin: auto;
-    }
-    
-    label {
-        display: block; /* Hace que cada etiqueta esté en una nueva línea */
-        margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
-    }
-    
-    input[type="text"],
-    input[type="file"],
-    select {
-        width: 100%; /* Hace que el campo ocupe todo el ancho disponible */
-        padding: 8px;
-        margin-bottom: 15px; /* Espacio entre campos */
-    }
+        form{
+            width: 100%;
+        }
+        .cont{
+            margin: auto;
+            width: 1400px;
+            border: 1px solid black;
+            
+            & .formulario{
+                width: 100%;
+                display: flex;
+                & .tipos{
+                    display: flex;
+                    width: 20%;
+                    justify-content: space-around;  
+                    align-items: center;
 
-    input[type="submit"] {
-        padding: 10px 15px;
-        background-color: blue;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
+                }
+                
+            }
+            & .iptoos{
+                margin-left: 10px;
+                display: flex;
+                gap: 10px;
+                flex-direction: row;
+                & .alums{
+                    width: 60px;
+                    display: flex;
+                    
+                    flex-direction: column;
+                }
+                & .carres{
+                    font-size: small;
+                    width: 40px;
+                }
+            }
 
-    input[type="submit"]:hover {
-        background-color: darkblue;
-    }
-</style>
-
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -48,89 +56,91 @@ include 'conexion.php';
     }
 
     ?>
+    <div class="cont">
+    <form action="insertar.php" method="POST" enctype="multipart/form-data">
+        <div class="formulario">
+                <div class="tipos">Fotografia &nbsp&nbsp&nbsp</div>
+                <div class="tipos">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Nombre</div>
+                <div class="tipos">&emsp;&emsp;Apellido</div>
+                <div class="tipos">CU</div>
+                <div class="tipos">Sexo</div>
+                <div class="tipos">Carrera</div><br><br>
+            </div>
+            <div class="iptoos">
+                <div class="alums">
+                    <label for="">1</label>
+                    <label for="">2</label>
+                    <label for="">3</label>
+                    <label for="">4</label>
+                </div>
+                <div class="archi">
+                    <input type="file" name="fotografia[]"><br>
+                    <input type="file" name="fotografia[]"><br>
+                    <input type="file" name="fotografia[]"><br>
+                    <input type="file" name="fotografia[]"><br>
+                </div>
+                <div class="noms">
+                    <input type="text" name="nombres[]"><br>
+                    <input type="text" name="nombres[]"><br>
+                    <input type="text" name="nombres[]"><br>
+                    <input type="text" name="nombres[]"><br>
+                </div>
+                <div class="apelli">
+                    <input type="text" name="apellidos[]"><br>
+                    <input type="text" name="apellidos[]"><br>
+                    <input type="text" name="apellidos[]"><br>
+                    <input type="text" name="apellidos[]"><br>
+                </div>
+                <div class="cuss">
+                    <input type="number" name="cu[]"><br>
+                    <input type="number" name="cu[]"><br>
+                    <input type="number" name="cu[]"><br>
+                    <input type="number" name="cu[]"><br>
+                </div>
+                <div class="gems">
+                    <input type="radio" name="sexo[1]" value="Masculino" > Masculino
+                    <input type="radio" name="sexo[1]" value="Femenino" > Femenino<br>
+                    <input type="radio" name="sexo[2]" value="Masculino" > Masculino
+                    <input type="radio" name="sexo[2]" value="Femenino" > Femenino<br>
+                    <input type="radio" name="sexo[3]" value="Masculino" > Masculino
+                    <input type="radio" name="sexo[3]" value="Femenino" > Femenino<br>
+                    <input type="radio" name="sexo[4]" value="Masculino" > Masculino
+                    <input type="radio" name="sexo[4]" value="Femenino" > Femenino<br>
+                </div>
+                <div class="carres">
+                    <select name="codigocarrera[]" >
+                        <?php foreach ($carreras as $carrera) { ?>
+                                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
+                            <?php } ?>
+        
+                            </select><br>
+        <select name="codigocarrera[]" required>
+        <?php foreach ($carreras as $carrera) { ?>
+                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
+            <?php } ?>
+        
+            </select><br>
+            <select name="codigocarrera[]" required>
+        <?php foreach ($carreras as $carrera) { ?>
+                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
+            <?php } ?>
+        
+            </select><br>
+            <select name="codigocarrera[]" required>
+        <?php foreach ($carreras as $carrera) { ?>
+                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
+            <?php } ?>
+        
+            </select>
+        </div><br><br><br><br><br>
 
-<div class="cont" >
-<form action="insertar.php" method="POST" enctype="multipart/form-data">
-    <div class="formulario">
-        <h2> 1</h2>
-        <label>Fotografía:</label>
-        <input type="file" name="fotografia[]"><br>
-        <label>Nombres:</label>
-        <input type="text" name="nombres[]" required><br>
-        <label>Apellidos:</label>
-        <input type="text" name="apellidos[]" required><br>
-        <label>CU:</label>
-        <input type="number" name="cu[]" required><br>
-        <label>Sexo:</label>
-        <input type="radio" name="sexo[1]" value="Masculino" required> Masculino
-        <input type="radio" name="sexo[1]" value="Femenino" required> Femenino<br>
-        <label>Carrera:</label>
-        <select name="codigocarrera[]" required>
-        <?php foreach ($carreras as $carrera) { ?>
-                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
-            <?php } ?>
-        </select><br>
+<div class='botos'>
+
+            <input type="submit" value="registrar">
+            <button>borrar</button>
+            </div>
+            </form>
         
-        <h2>Alumno 2</h2>
-        <label>Fotografía:</label>
-        <input type="file" name="fotografia[]"><br>
-        <label>Nombres:</label>
-        <input type="text" name="nombres[]" required><br>
-        <label>Apellidos:</label>
-        <input type="text" name="apellidos[]" required><br>
-        <label>CU:</label>
-        <input type="number" name="cu[]" required><br>
-        <label>Sexo:</label>
-        <input type="radio" name="sexo[2]" value="Masculino" required> Masculino
-        <input type="radio" name="sexo[2]" value="Femenino" required> Femenino<br>
-        <label>Carrera:</label>
-        <select name="codigocarrera[]" required>
-        <?php foreach ($carreras as $carrera) { ?>
-                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
-            <?php } ?>
-        </select><br>
-        
-        <h2>Alumno 3</h2>
-        <label>Fotografía:</label>
-        <input type="file" name="fotografia[]"><br>
-        <label>Nombres:</label>
-        <input type="text" name="nombres[]" required><br>
-        <label>Apellidos:</label>
-        <input type="text" name="apellidos[]" required><br>
-        <label>CU:</label>
-        <input type="number" name="cu[]" required><br>
-        <label>Sexo:</label>
-        <input type="radio" name="sexo[3]" value="Masculino" required> Masculino
-        <input type="radio" name="sexo[3]" value="Femenino" required> Femenino<br>
-        <label>Carrera:</label>
-        <select name="codigocarrera[]" required>
-        <?php foreach ($carreras as $carrera) { ?>
-                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
-            <?php } ?>
-        </select><br>
-        
-        <h2>Alumno 4</h2>
-        <label>Fotografía:</label>
-        <input type="file" name="fotografia[]"><br>
-        <label>Nombres:</label>
-        <input type="text" name="nombres[]" required><br>
-        <label>Apellidos:</label>
-        <input type="text" name="apellidos[]" required><br>
-        <label>CU:</label>
-        <input type="number" name="cu[]" required><br>
-        <label>Sexo:</label>
-        <input type="radio" name="sexo[4]" value="Masculino" required> Masculino
-        <input type="radio" name="sexo[4]" value="Femenino" required> Femenino<br>
-        <label>Carrera:</label>
-        <select name="codigocarrera[]" required>
-        <?php foreach ($carreras as $carrera) { ?>
-                <option value="<?php echo $carrera['codigo']; ?>"><?php echo $carrera['carrera']; ?></option>
-            <?php } ?>
-        </select><br>
-        
-        <input type="submit" value="insertar">
-        </div>
-    </form>
-</div>
+    </div>
 </body>
 </html>
