@@ -98,14 +98,14 @@ include 'conexion.php';
                     <input type="number" name="cu[]"><br>
                 </div>
                 <div class="gems">
+                    <input type="radio" name="sexo[0]" value="Masculino" > Masculino
+                    <input type="radio" name="sexo[0]" value="Femenino" > Femenino<br>
                     <input type="radio" name="sexo[1]" value="Masculino" > Masculino
                     <input type="radio" name="sexo[1]" value="Femenino" > Femenino<br>
                     <input type="radio" name="sexo[2]" value="Masculino" > Masculino
                     <input type="radio" name="sexo[2]" value="Femenino" > Femenino<br>
                     <input type="radio" name="sexo[3]" value="Masculino" > Masculino
                     <input type="radio" name="sexo[3]" value="Femenino" > Femenino<br>
-                    <input type="radio" name="sexo[4]" value="Masculino" > Masculino
-                    <input type="radio" name="sexo[4]" value="Femenino" > Femenino<br>
                 </div>
                 <div class="carres">
                     <select name="codigocarrera[]" >
