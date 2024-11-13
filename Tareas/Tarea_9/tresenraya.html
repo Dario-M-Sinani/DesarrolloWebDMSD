@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tres en raya</title>
+    <style>
+      button {
+        width: 60px;
+        height: 40px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tres en raya</h1>
+    <div id="mensaje">Turno: x</div>
+    <div id="Contenido">
+      <button onclick="juego(this)">-</button>
+      <button onclick="juego(this)">-</button>
+      <button onclick="juego(this)">-</button><br />
+      <button onclick="juego(this)">-</button>
+      <button onclick="juego(this)">-</button>
+      <button onclick="juego(this)">-</button><br />
+      <button onclick="juego(this)">-</button>
+      <button onclick="juego(this)">-</button>
+      <button onclick="juego(this)">-</button>
+    </div>
+
+    <script>
+      var turno = "X";
+
+      function cambiarTurno() {
+        turno = turno === "X" ? "O" : "X";
+        document.getElementById("mensaje").textContent = "Turno: " + turno;
+      }
+
+      function juego(boton) {
+        if (boton.textContent === "-") {
+          boton.textContent = turno;
+          cambiarTurno();
+        } else {
+          alert("Casilla ocupada. Por favor, elige otra casilla.");
+        }
+      }
+    </script>
+  </body>
+</html>
