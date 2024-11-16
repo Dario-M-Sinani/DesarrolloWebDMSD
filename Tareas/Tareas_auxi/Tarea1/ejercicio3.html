@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="palabra" onchange="esPalindromo(this.value)" />
+    <div class="resultado"></div>
+  </body>
+  <script>
+    function esPalindromo(palabra) {
+      var palabraInvertida = "";
+      for (let i = palabra.length - 1; i >= 0; i--) {
+        if (palabra[i] === " ") {
+          continue;
+        }
+        palabraInvertida += palabra[i];
+      }
+
+      var palabraSinEspacios = "";
+      for (let i = 0; i < palabra.length; i++) {
+        if (palabra[i] === " ") {
+          continue;
+        }
+        palabraSinEspacios += palabra[i];
+      }
+
+      let resultado = document.querySelector(".resultado");
+      if (palabraSinEspacios.toLowerCase() === palabraInvertida.toLowerCase()) {
+        resultado.innerHTML = "La palabra es palíndromo";
+      } else {
+        resultado.innerHTML = "La palabra no es palíndromo";
+      }
+    }
+  </script>
+</html>

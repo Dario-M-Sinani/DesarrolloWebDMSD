@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="elemento"></div>
+  </body>
+  <script>
+    var nums = [];
+    for (i = 0; i < 4; i++) {
+      nums.push(parseInt(prompt("Ingrese un número")));
+    }
+
+    for (let i = 0; i < nums.length - 1; i++) {
+      for (let j = 0; j < nums.length - 1 - i; j++) {
+        if (nums[j] > nums[j + 1]) {
+          let temp = nums[j];
+          nums[j] = nums[j + 1];
+          nums[j + 1] = temp;
+        }
+      }
+    }
+
+    console.log(nums);
+  </script>
+</html>

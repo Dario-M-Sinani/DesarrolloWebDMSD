@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 1000;
+
+    & .modal {
+        width: 500px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+}
+
+& .button {
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(235, 231, 231);
+
+    }
+}
+
+& table {
+    border-spacing: 0;
+
+    & th {
+        background-color: blue;
+        color: white;
+        padding: 5px;
+    }
+
+    & td {
+        padding: 5px;
+    }
+
+    /* & tr:nth-child(even) {
+        background-color: rgb(235, 231, 231);
+    } */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    & .content {
+        display: flex;
+        border: 2px solid green;
+
+        & .menu {
+            width: 10%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            gap: 5px;
+            border-right: 2px solid green;
+
+            & .option {
+                cursor: pointer;
+                width: 35px;
+                height: 35px;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: green;
+                    color: white;
+                }
+            }
+        }
+
+        #contenido {
+            width: 90%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            & .login {
+                width: 300px;
+
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid black;
+                    padding: 10px;
+                    margin: 0 auto;
+                    width: min-content;
+                    gap: 10px;
+                }
+
+                button {
+                    width: 100px;
+                    background-color: white;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    padding: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    #mensaje {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background-color: rgb(116, 116, 231);
+        border: 1px solid blue;
+    }
+}

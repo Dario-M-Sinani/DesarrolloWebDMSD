@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .row {
+        display: flex;
+        gap: 5px;
+      }
+      .resultado {
+        padding: 10px;
+        background-color: red;
+        color: white;
+      }
+
+      button {
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="col">
+      <div class="row">
+        <label>Operación</label>
+        <select id="operacion">
+          <option value="sum">Suma</option>
+          <option value="res">Resta</option>
+          <option value="mult">Multiplicación</option>
+          <option value="div">División</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>A</label>
+        <input type="number" id="a" />
+      </div>
+      <div class="row">
+        <label>B</label>
+        <input type="number" id="b" />
+      </div>
+      <button id="boton">Calcular</button>
+      <div id="resultado"></div>
+    </div>
+  </body>
+  <script src="ejercicio4.js"></script>
+</html>
